@@ -1,3 +1,4 @@
+```javascript
 // =========================
 // LOGIN SYSTEM
 // =========================
@@ -8,24 +9,25 @@ if (loginForm) {
 
     loginForm.addEventListener("submit", function (event) {
 
-        // Stop the form from refreshing the page
+        // Prevent page refresh
         event.preventDefault();
 
-        // Get username and password
+        // Get username
         const username = document
             .getElementById("username")
             .value
             .trim();
 
+        // Get password
         const password = document
             .getElementById("password")
             .value;
 
-        // Get registered users from localStorage
+        // Get registered users
         const users =
             JSON.parse(localStorage.getItem("users")) || [];
 
-        // Find a matching account
+        // Find matching user
         const user = users.find(function (account) {
 
             return (
@@ -35,13 +37,14 @@ if (loginForm) {
 
         });
 
+
         // =========================
         // SUCCESSFUL LOGIN
         // =========================
 
         if (user) {
 
-            // Save currently logged-in user
+            // Save logged-in user
             localStorage.setItem(
                 "currentUser",
                 JSON.stringify(user)
@@ -49,10 +52,11 @@ if (loginForm) {
 
             alert("Login successful! 🎉");
 
-            // Go to dashboard
+            // Open dashboard
             window.location.href = "dashboard.html";
 
         }
+
 
         // =========================
         // FAILED LOGIN
@@ -67,3 +71,4 @@ if (loginForm) {
     });
 
 }
+
