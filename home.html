@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,6 +8,7 @@
 
     <title>My Learning Platform</title>
 
+    <!-- CSS -->
     <link rel="stylesheet" href="home.css">
 
     <!-- JavaScript -->
@@ -15,13 +17,17 @@
 
 <body>
 
-    <!-- HEADER -->
+    <!-- =========================
+         HEADER
+    ========================== -->
     <header>
         <h1>Welcome to my learning platform!</h1>
     </header>
 
 
-    <!-- NAVIGATION -->
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
     <nav class="main-nav">
 
         <div class="logo">
@@ -38,7 +44,9 @@
     </nav>
 
 
-    <!-- LOGIN SECTION -->
+    <!-- =========================
+         LOGIN SECTION
+    ========================== -->
     <div class="login-container">
 
         <div class="login-box">
@@ -47,6 +55,7 @@
 
             <form id="loginForm">
 
+                <!-- USERNAME -->
                 <div class="input-box">
 
                     <label for="username">
@@ -56,13 +65,16 @@
                     <input
                         type="text"
                         id="username"
+                        name="username"
                         placeholder="Enter your username"
+                        autocomplete="username"
                         required
                     >
 
                 </div>
 
 
+                <!-- PASSWORD -->
                 <div class="input-box">
 
                     <label for="password">
@@ -72,18 +84,22 @@
                     <input
                         type="password"
                         id="password"
+                        name="password"
                         placeholder="Enter your password"
+                        autocomplete="current-password"
                         required
                     >
 
                 </div>
 
 
-                <button type="button" onclick="login()">
+                <!-- LOGIN BUTTON -->
+                <button type="submit">
                     Login
                 </button>
 
 
+                <!-- REGISTER LINK -->
                 <p>
                     Don't have an account?
                     <a href="register.html">Register</a>
@@ -96,7 +112,9 @@
     </div>
 
 
-    <!-- LATEST UPDATES -->
+    <!-- =========================
+         LATEST UPDATES
+    ========================== -->
     <div class="info-container">
 
         <div class="info-box">
@@ -139,7 +157,7 @@
 
     </div>
 
-
 </body>
 
 </html>
+
