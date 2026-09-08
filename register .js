@@ -7,30 +7,41 @@ function register() {
     const password =
         document.getElementById("password").value;
 
-    // Get existing accounts
+    // Make sure fields are not empty
+    if (username === "" || password === "") {
+        alert("Please enter a username and password.");
+        return;
+    }
+
+    // Get existing users
     const users =
         JSON.parse(localStorage.getItem("users")) || [];
 
     // Check if username already exists
-    const existingUser =
-        users.find(account => account.username === username);
+    const userExists = users.some(function (account) {
+        return account.username === username;
+    });
 
-    if (existingUser) {
+    if (userExists) {
         alert("Username already exists!");
         return;
     }
 
-    // Add new account
-    users.push({
+    // Create the new account
+    const newUser = {
         username: username,
         password: password
-    });
+    };
 
-    // Save accounts
+    // Add account to users
+    users.push(newUser);
+
+    // Save users
     localStorage.setItem("users", JSON.stringify(users));
 
-    alert("Account created successfully!");
+    alert("Account created successfully! 🎉");
 
-    window.location.href = "home.html";
+    // Go to login page
+    window.location.href = "index.html";
 }
 ```
