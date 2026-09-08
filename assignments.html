@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assignment</title>
+
+    <link rel="stylesheet" href="assignments.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-pen-to-square"></i>
+        Student Assignment
+    </div>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="computer.html">Computer Science</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+</header>
+
+
+<section class="assignment-header">
+
+    <span>ASSESSMENT</span>
+
+    <h1 id="assignmentTitle">
+        Assignment
+    </h1>
+
+    <p id="assignmentDescription">
+        Answer all 20 questions carefully.
+    </p>
+
+</section>
+
+
+<main class="assignment-container">
+
+    <div class="instructions">
+
+        <h2>
+            <i class="fa-solid fa-circle-info"></i>
+            Instructions
+        </h2>
+
+        <ul>
+            <li>There are 20 questions.</li>
+            <li>Each question carries 1 mark.</li>
+            <li>Choose only one answer for each question.</li>
+            <li>Make sure you answer every question.</li>
+            <li>Your score will be calculated automatically.</li>
+        </ul>
+
+    </div>
+
+
+    <form id="assignmentForm">
+
+        <div id="questions"></div>
+
+        <button type="submit" class="submit-btn">
+            <i class="fa-solid fa-check"></i>
+            Submit Assignment
+        </button>
+
+    </form>
+
+
+    <div id="result" class="result"></div>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 Student Learning Platform
+    </p>
+
+</footer>
+
+
+<script src="assignments.js" defer></script>
+
+</body>
+</html>

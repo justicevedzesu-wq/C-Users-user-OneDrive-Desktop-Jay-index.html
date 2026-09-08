@@ -1,0 +1,348 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #111827;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: #111827;
+    color: white;
+
+    min-height: 70px;
+    padding: 0 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+
+    color: white;
+
+    text-align: center;
+
+    padding: 70px 20px;
+}
+
+.hero span {
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    opacity: 0.9;
+}
+
+.hero h1 {
+    font-size: 46px;
+
+    margin: 10px 0;
+}
+
+.hero p {
+    max-width: 750px;
+
+    margin: auto;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   MATHEMATICS CONTAINER
+========================= */
+
+.math-container {
+    width: 90%;
+
+    max-width: 1000px;
+
+    margin: 50px auto 70px;
+}
+
+.math-box {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.math-box h2 {
+    color: #111827;
+
+    font-size: 28px;
+
+    margin-bottom: 8px;
+}
+
+.math-box h2 i {
+    color: #2563eb;
+
+    margin-right: 8px;
+}
+
+.subtitle {
+    color: #6b7280;
+
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   CHOICE BOX
+========================= */
+
+.choice-box {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e5e7eb;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.choice-box:hover {
+    border-color: #2563eb;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 15px rgba(37, 99, 235, 0.10);
+}
+
+
+/* =========================
+   CHOICE INFORMATION
+========================= */
+
+.choice-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+.icon {
+    width: 55px;
+
+    height: 55px;
+
+    min-width: 55px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    border-radius: 12px;
+
+    font-size: 22px;
+}
+
+.choice-box h3 {
+    font-size: 20px;
+
+    margin-bottom: 4px;
+}
+
+.choice-box p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin: 0;
+}
+
+
+/* =========================
+   ENTER BUTTON
+========================= */
+
+.choice-box button {
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition: 0.3s;
+}
+
+.choice-box button:hover {
+    background: #1d4ed8;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+footer p {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .math-container {
+        width: 92%;
+
+        margin: 30px auto 50px;
+    }
+
+    .math-box {
+        padding: 22px;
+    }
+
+    .math-box h2 {
+        font-size: 23px;
+    }
+
+    .choice-box {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    .choice-info {
+        align-items: flex-start;
+    }
+
+    .choice-box button {
+        width: 100%;
+
+        justify-content: center;
+    }
+}

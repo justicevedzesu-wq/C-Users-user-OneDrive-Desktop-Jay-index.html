@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Registration Page</title>
+
+    <link rel="stylesheet" href="register.css">
+
+    <script src="register.js" defer></script>
+
+</head>
+
+<body>
+
+    <p class="welcome">
+        Welcome to the Registration Platform!
+    </p>
+
+
+    <div class="register-container">
+
+        <div class="register-box">
+
+            <h2>Create Account</h2>
+
+            <form id="registerForm">
+
+                <div class="input-box">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter username"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Create password"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        placeholder="Confirm password"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Register
+                </button>
+
+
+                <p id="message"></p>
+
+
+                <p>
+                    Already have an account?
+                    <a href="home.html">Login</a>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

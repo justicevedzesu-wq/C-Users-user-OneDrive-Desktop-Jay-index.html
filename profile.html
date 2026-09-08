@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        Student Portal
+
+    </div>
+
+
+    <nav>
+
+        <a href="dashboard.html">
+
+            <i class="fa-solid fa-house"></i>
+
+            Dashboard
+
+        </a>
+
+        <a href="math.html">
+
+            Mathematics
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- PROFILE HERO -->
+
+<section class="profile-header">
+
+    <div class="profile-picture">
+
+        <i class="fa-solid fa-user"></i>
+
+    </div>
+
+
+    <h1 id="profileName">
+        Student
+    </h1>
+
+    <p id="profileUsername">
+        @username
+    </p>
+
+</section>
+
+
+
+<!-- PROFILE CONTENT -->
+
+<main class="profile-container">
+
+
+    <!-- PERSONAL INFORMATION -->
+
+    <section class="profile-card">
+
+        <div class="card-title">
+
+            <div>
+
+                <h2>
+                    <i class="fa-solid fa-user"></i>
+                    Personal Information
+                </h2>
+
+                <p>
+                    Update your personal information below.
+                </p>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="editButton"
+                onclick="enableEditing()">
+
+                <i class="fa-solid fa-pen"></i>
+
+                Edit Profile
+
+            </button>
+
+        </div>
+
+
+
+        <form id="profileForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="input-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    disabled
+                    placeholder="Enter your full name"
+                >
+
+            </div>
+
+
+
+            <!-- USERNAME -->
+
+            <div class="input-group">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    disabled
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    disabled
+                >
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div class="input-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    disabled
+                    placeholder="Enter phone number"
+                >
+
+            </div>
+
+
+
+            <!-- DEPARTMENT -->
+
+            <div class="input-group">
+
+                <label for="department">
+                    Department / Course
+                </label>
+
+                <input
+                    type="text"
+                    id="department"
+                    disabled
+                    placeholder="e.g. Computer Science"
+                >
+
+            </div>
+
+
+
+            <!-- LEVEL -->
+
+            <div class="input-group">
+
+                <label for="level">
+                    Level
+                </label>
+
+                <select
+                    id="level"
+                    disabled>
+
+                    <option value="">
+                        Select Level
+                    </option>
+
+                    <option value="Level 100">
+                        Level 100
+                    </option>
+
+                    <option value="Level 200">
+                        Level 200
+                    </option>
+
+                    <option value="Level 300">
+                        Level 300
+                    </option>
+
+                    <option value="Level 400">
+                        Level 400
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- BIO -->
+
+            <div class="input-group full-width">
+
+                <label for="bio">
+                    About Me
+                </label>
+
+                <textarea
+                    id="bio"
+                    rows="4"
+                    disabled
+                    placeholder="Tell us a little about yourself">
+                </textarea>
+
+            </div>
+
+
+
+            <!-- SAVE BUTTON -->
+
+            <div
+                class="save-area"
+                id="saveArea">
+
+                <button
+                    type="submit"
+                    class="save-button">
+
+                    <i class="fa-solid fa-floppy-disk"></i>
+
+                    Save Changes
+
+                </button>
+
+                <button
+                    type="button"
+                    class="cancel-button"
+                    onclick="cancelEditing()">
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+
+    <!-- ACCOUNT INFORMATION -->
+
+    <section class="profile-card">
+
+        <h2>
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Account Information
+
+        </h2>
+
+
+        <div class="account-info">
+
+            <div>
+
+                <span>Account Status</span>
+
+                <strong class="active">
+                    Active
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>Account Type</span>
+
+                <strong>
+                    Student
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- LOGOUT -->
+
+    <button
+        class="logout-button"
+        onclick="logout()">
+
+        <i class="fa-solid fa-right-from-bracket"></i>
+
+        Logout
+
+    </button>
+    <div class="profile-photo-section">
+
+    <div class="profile-photo">
+        <img id="profilePhoto"
+             src="https://via.placeholder.com/150"
+             alt="Student Profile Photo">
+    </div>
+
+    <input
+        type="file"
+        id="photoInput"
+        accept="image/*"
+        hidden
+    >
+
+    <button type="button"
+            class="photo-btn"
+            onclick="document.getElementById('photoInput').click()">
+
+        <i class="fa-solid fa-camera"></i>
+        Change Profile Photo
+
+    </button>
+
+    <p class="photo-info">
+        JPG, PNG or WEBP. Choose a clear profile photo.
+    </p>
+
+</div>
+
+
+</main>
+
+
+
+<footer>
+
+    <p>
+        © 2026 Student Learning Portal
+    </p>
+
+</footer>
+
+
+
+<script src="profile.js"></script>
+
+</body>
+
+</html>

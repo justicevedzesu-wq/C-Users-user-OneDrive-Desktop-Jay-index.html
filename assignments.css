@@ -1,0 +1,397 @@
+/* ================================
+   ASSIGNMENT PAGE
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #111827;
+    line-height: 1.6;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header {
+    background: #111827;
+    color: white;
+    min-height: 70px;
+    padding: 0 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo i {
+    margin-right: 8px;
+    color: #60a5fa;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+
+/* ================================
+   ASSIGNMENT HEADER
+================================ */
+
+.assignment-header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+
+    text-align: center;
+
+    padding: 65px 20px;
+}
+
+.assignment-header span {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    opacity: 0.9;
+}
+
+.assignment-header h1 {
+    font-size: 42px;
+    margin: 10px 0;
+}
+
+.assignment-header p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.assignment-container {
+    width: 90%;
+    max-width: 1000px;
+
+    margin: 50px auto;
+}
+
+
+/* ================================
+   INSTRUCTIONS
+================================ */
+
+.instructions {
+    background: white;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+    border-left: 5px solid #2563eb;
+}
+
+.instructions h2 {
+    color: #2563eb;
+
+    margin-bottom: 15px;
+}
+
+.instructions h2 i {
+    margin-right: 8px;
+}
+
+.instructions ul {
+    padding-left: 25px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+}
+
+
+/* ================================
+   QUESTION CARD
+================================ */
+
+.question-card {
+    background: white;
+
+    padding: 30px;
+
+    margin-bottom: 25px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.question-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.1);
+}
+
+.question-card h3 {
+    color: #2563eb;
+
+    margin-bottom: 12px;
+
+    font-size: 18px;
+}
+
+.question-card p {
+    font-size: 17px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   ANSWER OPTIONS
+================================ */
+
+.options {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 16px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    background: #f9fafb;
+}
+
+.option:hover {
+    background: #eff6ff;
+
+    border-color: #2563eb;
+}
+
+.option input {
+    width: 18px;
+    height: 18px;
+
+    cursor: pointer;
+}
+
+.option span {
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+
+/* ================================
+   SUBMIT BUTTON
+================================ */
+
+.submit-btn {
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.submit-btn i {
+    margin-right: 8px;
+}
+
+.submit-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+   RESULT
+================================ */
+
+.result {
+    background: white;
+
+    margin-top: 35px;
+
+    padding: 35px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+}
+
+.result h2 {
+    color: #2563eb;
+
+    margin-bottom: 10px;
+}
+
+.result p {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+.result strong {
+    color: #2563eb;
+
+    font-size: 20px;
+}
+
+.new-questions {
+    color: #2563eb;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+    background: #111827;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px;
+
+    margin-top: 70px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 15px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .assignment-header {
+        padding: 50px 20px;
+    }
+
+    .assignment-header h1 {
+        font-size: 30px;
+    }
+
+    .assignment-header p {
+        font-size: 16px;
+    }
+
+    .assignment-container {
+        width: 92%;
+
+        margin: 30px auto;
+    }
+
+    .instructions {
+        padding: 22px;
+    }
+
+    .question-card {
+        padding: 22px;
+    }
+
+    .question-card p {
+        font-size: 16px;
+    }
+
+    .option {
+        padding: 13px;
+    }
+
+    .submit-btn {
+        padding: 15px;
+    }
+}

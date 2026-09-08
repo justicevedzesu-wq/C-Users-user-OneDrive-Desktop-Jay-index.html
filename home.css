@@ -1,0 +1,172 @@
+body {
+    background: rgb(102, 205, 231);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+/* Navigation Bar */
+
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    color: yellow;
+}
+
+
+/* Center Login Box */
+
+.login-container {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Login Box */
+
+.login-box {
+    width: 300px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+
+/* Input Fields */
+
+.input-box {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 10px 5px;
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    font-size: 16px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+input::placeholder {
+    color: #333;
+}
+
+
+/* Button */
+
+button {
+    width: 100%;
+    background: #03a9f4;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    border-radius: 20px;
+}
+
+button:hover {
+    background: darkblue;
+}
+
+
+/* Links */
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: flex;
+}
+.info-container{
+    background: rgb(71, 180, 235);
+    align-items: center;
+    display: flex;
+    height: 10px;
+    justify-content: center;
+}
+.info-box{
+    width: 20%;
+    padding: 20px;
+    background: rgb(111, 190, 243);
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-sizing: border-box;
+    height:30px;
+}
+.info-box h2{
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    text-decoration: underline;
+}
+nav {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+}
+ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+ul li a:hover {
+    color: yellow;
+}

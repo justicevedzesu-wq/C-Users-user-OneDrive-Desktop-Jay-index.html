@@ -1,0 +1,434 @@
+
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+
+    background: #f4f7fb;
+
+    font-family: Arial, sans-serif;
+    color: #172033;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    width: 100%;
+
+    background: #111827;
+    color: white;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo i {
+    margin-right: 8px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #60a5fa;
+}
+
+nav i {
+    margin-right: 5px;
+}
+
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome {
+    width: 86%;
+    max-width: 1200px;
+
+    margin: 40px auto 25px;
+
+    padding: 40px;
+
+    background: #2563eb;
+    color: white;
+
+    border-radius: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.welcome-small {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin: 0 0 10px;
+}
+
+.welcome h1 {
+    font-size: 34px;
+    margin: 0 0 15px;
+}
+
+.welcome-text {
+    max-width: 650px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+.welcome-icon {
+    font-size: 100px;
+    opacity: 0.2;
+}
+
+
+/* =========================
+   STATISTICS
+========================= */
+
+.stats {
+    width: 86%;
+    max-width: 1200px;
+
+    margin: 0 auto 40px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 22px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.stat-card > i {
+    font-size: 30px;
+    color: #2563eb;
+}
+
+.stat-card h3 {
+    margin: 0;
+
+    font-size: 25px;
+}
+
+.stat-card p {
+    margin: 5px 0 0;
+
+    color: #6b7280;
+}
+
+
+/* =========================
+   COURSES
+========================= */
+
+.courses {
+    width: 86%;
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    font-size: 28px;
+}
+
+.section-heading p {
+    color: #6b7280;
+}
+
+
+/* Course grid */
+
+.course-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 25px;
+}
+
+
+/* Course card */
+
+.course-card {
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.14);
+}
+
+
+/* Course icon */
+
+.course-icon {
+    background: #dbeafe;
+
+    padding: 25px;
+
+    font-size: 38px;
+
+    color: #2563eb;
+}
+
+
+/* Course content */
+
+.course-content {
+    padding: 25px;
+}
+
+.course-number {
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    color: #6b7280;
+}
+
+.course-content h3 {
+    font-size: 21px;
+
+    margin: 10px 0;
+}
+
+.course-content p {
+    color: #6b7280;
+
+    line-height: 1.6;
+
+    font-size: 14px;
+
+    min-height: 70px;
+}
+
+
+/* Continue button */
+
+.course-content button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.course-content button:hover {
+    background: #1d4ed8;
+}
+
+.course-content button i {
+    margin-left: 8px;
+}
+
+
+/* =========================
+   STUDY TIP
+========================= */
+
+.study-tip {
+    width: 86%;
+    max-width: 1200px;
+
+    margin: 40px auto;
+
+    padding: 25px;
+
+    background: #fff;
+
+    border-left: 5px solid #2563eb;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.tip-icon {
+    font-size: 35px;
+
+    color: #2563eb;
+}
+
+.study-tip h3 {
+    margin: 0 0 8px;
+}
+
+.study-tip p {
+    margin: 0;
+
+    color: #6b7280;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 60px;
+
+    padding: 25px 7%;
+
+    background: #111827;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-icon {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 15px 5%;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .welcome {
+        width: 92%;
+        padding: 30px 25px;
+    }
+
+    .welcome h1 {
+        font-size: 26px;
+    }
+
+    .courses,
+    .stats,
+    .study-tip {
+        width: 92%;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+}

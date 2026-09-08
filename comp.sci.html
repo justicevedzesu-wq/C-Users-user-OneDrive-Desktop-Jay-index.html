@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Computer Science</title>
+
+    <link rel="stylesheet" href="computer.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+
+        <div class="logo">
+            <i class="fa-solid fa-laptop-code"></i>
+            Computer Science
+        </div>
+
+        <nav>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a href="profile.html">
+                <i class="fa-solid fa-user"></i>
+                Profile
+            </a>
+        </nav>
+
+    </header>
+
+
+    <!-- Course Hero -->
+    <section class="course-hero">
+
+        <div class="hero-content">
+
+            <span>COURSE 01</span>
+
+            <h1>Computer Science</h1>
+
+            <p>
+                Learn the fundamental concepts of computing, programming,
+                algorithms and problem solving.
+            </p>
+
+            <button onclick="startLearning()">
+                Start Learning
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+        <div class="hero-icon">
+            <i class="fa-solid fa-computer"></i>
+        </div>
+
+    </section>
+
+
+    <!-- Course Information -->
+    <section class="course-info">
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-clock"></i>
+
+            <div>
+                <h3>Study Time</h3>
+                <p>Self-paced</p>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-book"></i>
+
+            <div>
+                <h3>Lessons</h3>
+                <p>12 Topics</p>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-code"></i>
+
+            <div>
+                <h3>Practical</h3>
+                <p>Programming</p>
+            </div>
+
+        </div>
+
+
+        <div class="info-card">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <div>
+                <h3>Progress</h3>
+                <p>0% Complete</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- About -->
+        <section class="about">
+
+            <h2>About This Course</h2>
+
+            <p>
+                Computer Science is the study of computation, information,
+                algorithms and computer systems. This course introduces you
+                to the fundamental ideas needed to understand how computers
+                work and how software is developed.
+            </p>
+
+            <p>
+                You will develop problem-solving skills and learn how to
+                approach real-world problems using computational thinking.
+            </p>
+
+        </section>
+
+
+        <!-- Learning Modules -->
+        <section class="modules">
+
+            <h2>Learning Modules</h2>
+
+            <p class="section-description">
+                Follow the modules in order to build your knowledge step by step.
+            </p>
+
+
+            <div class="module-grid">
+
+                <div class="module-card">
+
+                    <div class="module-number">01</div>
+
+                    <div>
+                        <h3>Introduction to Computer Science</h3>
+
+                        <p>
+                            Understand computer science, its history,
+                            applications and importance.
+                        </p>
+
+                        <button onclick="openModule(1)">
+                            View Lesson
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="module-card">
+
+                    <div class="module-number">02</div>
+
+                    <div>
+                        <h3>Computer Systems</h3>
+
+                        <p>
+                            Learn about hardware, software, memory,
+                            processors and computer components.
+                        </p>
+
+                        <button onclick="openModule(2)">
+                            View Lesson
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="module-card">
+
+                    <div class="module-number">03</div>
+
+                    <div>
+                        <h3>Algorithms & Problem Solving</h3>
+
+                        <p>
+                            Learn how algorithms are designed and
+                            used to solve computational problems.
+                        </p>
+
+                        <button onclick="openModule(3)">
+                            View Lesson
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="module-card">
+
+                    <div class="module-number">04</div>
+
+                    <div>
+                        <h3>Programming Fundamentals</h3>
+
+                        <p>
+                            Learn variables, data types, operators,
+                            conditions, loops and functions.
+                        </p>
+
+                        <button onclick="openModule(4)">
+                            View Lesson
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="module-card">
+
+                    <div class="module-number">05</div>
+
+                    <div>
+                        <h3>Data Structures</h3>
+
+                        <p>
+                            Explore arrays, stacks, queues, linked lists
+                            and other ways of organizing data.
+                        </p>
+
+                        <button onclick="openModule(5)">
+                            View Lesson
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="module-card">
+
+                    <div class="module-number">06</div>
+
+                    <div>
+                        <h3>Computer Ethics</h3>
+
+                        <p>
+                            Understand privacy, security, intellectual
+                            property and ethical computing.
+                        </p>
+
+                        <button onclick="openModule(6)">
+                            View Lesson
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Study Resources -->
+        <section class="resources">
+
+            <h2>Study Resources</h2>
+
+            <div class="resource-grid">
+
+                <a href="#">
+                    <i class="fa-solid fa-file-lines"></i>
+
+                    <div>
+                        <h3>Lecture Notes</h3>
+                        <p>Review your course materials.</p>
+                    </div>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                    <div>
+                        <h3>Assignments</h3>
+                        <p>Complete your pending assignments.</p>
+                    </div>
+                </a>
+
+
+                <a href="#">
+                    <i class="fa-solid fa-circle-question"></i>
+
+                    <div>
+                        <h3>Practice Questions</h3>
+                        <p>Test your understanding.</p>
+                    </div>
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Student Portal
+        </p>
+
+        <p>
+            Computer Science • Learn • Practice • Improve
+        </p>
+
+    </footer>
+
+
+    <script>
+
+        function startLearning() {
+            document.querySelector(".modules").scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+
+
+        function openModule(moduleNumber) {
+
+            if (moduleNumber === 1) {
+                window.location.href = "cs-introduction.html";
+            }
+
+            else if (moduleNumber === 2) {
+                window.location.href = "computer-systems.html";
+            }
+
+            else if (moduleNumber === 3) {
+                window.location.href = "algorithms.html";
+            }
+
+            else if (moduleNumber === 4) {
+                window.location.href = "programming.html";
+            }
+
+            else if (moduleNumber === 5) {
+                window.location.href = "data-structures.html";
+            }
+
+            else if (moduleNumber === 6) {
+                window.location.href = "computer-ethics.html";
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
