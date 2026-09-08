@@ -1,20 +1,55 @@
+/* =========================
+   GENERAL PAGE SETTINGS
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background: rgb(102, 205, 231);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
+    min-height: 100vh;
 }
 
 
-/* Navigation Bar */
+/* =========================
+   HEADER
+========================= */
 
-nav {
+.site-header {
+    background: rgb(102, 205, 231);
+    text-align: center;
+    padding: 25px 15px;
+}
+
+.site-header h1 {
+    margin: 0;
+    color: black;
+    font-size: 30px;
+}
+
+
+/* =========================
+   MAIN NAVIGATION
+========================= */
+
+.main-nav {
     background-color: black;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 40px;
+    width: 100%;
 }
 
 .logo {
@@ -23,7 +58,7 @@ nav {
     font-weight: bold;
 }
 
-ul {
+.main-nav ul {
     display: flex;
     list-style: none;
     gap: 30px;
@@ -31,68 +66,94 @@ ul {
     padding: 0;
 }
 
-ul li a {
+.main-nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 18px;
 }
 
-ul li a:hover {
+.main-nav ul li a:hover {
     color: yellow;
 }
 
 
-/* Center Login Box */
+/* =========================
+   LOGIN SECTION
+========================= */
 
 .login-container {
-    height: 80vh;
+    min-height: 65vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 40px 20px;
 }
 
 
-/* Login Box */
+/* =========================
+   LOGIN BOX
+========================= */
 
 .login-box {
-    width: 300px;
-    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    padding: 30px;
     background: white;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .login-box h2 {
     text-align: center;
+    margin-top: 0;
     margin-bottom: 25px;
+    color: black;
 }
 
 
-/* Input Fields */
+/* =========================
+   INPUT FIELDS
+========================= */
 
 .input-box {
     position: relative;
     margin-bottom: 20px;
 }
 
+.input-box label {
+    display: block;
+    margin-bottom: 7px;
+    font-size: 16px;
+    color: black;
+}
+
 .input-box input {
     width: 100%;
-    padding: 10px 5px;
+    padding: 12px 8px;
     border: none;
     border-bottom: 2px solid #333;
     outline: none;
     font-size: 16px;
-    box-sizing: border-box;
     background: transparent;
 }
 
-input::placeholder {
-    color: #333;
+.input-box input:focus {
+    border-bottom: 2px solid #03a9f4;
+}
+
+.input-box input::placeholder {
+    color: #666;
 }
 
 
-/* Button */
+/* =========================
+   LOGIN BUTTON
+========================= */
 
 button {
     width: 100%;
@@ -103,6 +164,7 @@ button {
     font-size: 18px;
     color: white;
     border-radius: 20px;
+    transition: 0.3s;
 }
 
 button:hover {
@@ -110,63 +172,177 @@ button:hover {
 }
 
 
-/* Links */
+/* =========================
+   LINKS
+========================= */
 
-a {
+.login-box a {
     color: blue;
     text-decoration: none;
 }
 
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   GENERAL PARAGRAPHS
+========================= */
 
 p {
     font-size: 16px;
     line-height: 1.5;
     font-weight: bold;
-    text-align: flex;
+    text-align: center;
 }
-.info-container{
+
+
+/* =========================
+   LATEST UPDATES
+========================= */
+
+.info-container {
     background: rgb(71, 180, 235);
-    align-items: center;
     display: flex;
-    height: 10px;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 40px 20px;
 }
-.info-box{
-    width: 20%;
-    padding: 20px;
+
+.info-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
     background: rgb(111, 190, 243);
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    box-sizing: border-box;
-    height:30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
-.info-box h2{
-    font-size: 20px;
+
+.info-box h2 {
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
     color: white;
     text-decoration: underline;
+    margin-top: 0;
 }
-nav {
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
+
+.info-box p {
+    color: white;
+    text-align: center;
 }
-ul {
+
+
+/* =========================
+   LATEST UPDATES NAVIGATION
+========================= */
+
+.info-nav {
+    background: transparent;
+    display: block;
+    padding: 0;
+}
+
+.info-nav ul {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
     list-style: none;
-    gap: 30px;
     margin: 0;
     padding: 0;
 }
-ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
+
+.info-nav ul li {
+    margin: 0;
 }
 
-ul li a:hover {
+.info-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.info-nav ul li a:hover {
     color: yellow;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVENESS
+========================= */
+
+@media (max-width: 600px) {
+
+    .site-header {
+        padding: 20px 10px;
+    }
+
+    .site-header h1 {
+        font-size: 23px;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-nav ul li a {
+        font-size: 15px;
+    }
+
+    .login-container {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .login-box {
+        max-width: 100%;
+        padding: 25px 20px;
+    }
+
+    .info-container {
+        padding: 30px 15px;
+    }
+
+    .info-box {
+        padding: 20px;
+    }
+
+    .info-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 }
