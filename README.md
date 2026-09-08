@@ -1,45 +1,52 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Learning Platform</title>
+```
+<title>My Learning Platform</title>
 
-    <link rel="stylesheet" href="home.css">
+<!-- CSS -->
+<link rel="stylesheet" href="home.css">
 
-    <!-- JavaScript -->
-    <script src="h.js" defer></script>
+<!-- JavaScript -->
+<script src="h.js" defer></script>
+```
+
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Welcome to my learning platform!</h1>
-    </header>
+```
+<!-- HEADER -->
+<header class="site-header">
+    <h1>Welcome to My Learning Platform!</h1>
+</header>
 
 
-    <!-- NAVIGATION -->
-    <nav class="main-nav">
+<!-- NAVIGATION -->
+<nav class="main-nav">
+    <div class="logo">
+        MyWebsite
+    </div>
 
-        <div class="logo">
-            MyWebsite
-        </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
 
-        <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
 
-    </nav>
-
+<!-- MAIN CONTENT -->
+<main>
 
     <!-- LOGIN SECTION -->
-    <div class="login-container">
+    <section class="login-container">
 
         <div class="login-box">
 
@@ -48,38 +55,34 @@
             <form id="loginForm">
 
                 <div class="input-box">
-
-                    <label for="username">
-                        Username
-                    </label>
+                    <label for="username">Username</label>
 
                     <input
                         type="text"
                         id="username"
+                        name="username"
                         placeholder="Enter your username"
+                        autocomplete="username"
                         required
                     >
-
                 </div>
 
 
                 <div class="input-box">
-
-                    <label for="password">
-                        Password
-                    </label>
+                    <label for="password">Password</label>
 
                     <input
                         type="password"
                         id="password"
+                        name="password"
                         placeholder="Enter your password"
+                        autocomplete="current-password"
                         required
                     >
-
                 </div>
 
 
-                <button type="button" onclick="login()">
+                <button type="submit">
                     Login
                 </button>
 
@@ -93,20 +96,16 @@
 
         </div>
 
-    </div>
+    </section>
 
 
     <!-- LATEST UPDATES -->
-    <div class="info-container">
+    <section class="info-container">
 
         <div class="info-box">
 
             <div class="label-box">
-
-                <h2>
-                    Latest Updates
-                </h2>
-
+                <h2>Latest Updates</h2>
             </div>
 
             <p>
@@ -114,11 +113,8 @@
                 related to our platform.
             </p>
 
-
-            <nav class="info-nav">
-
+            <nav class="info-nav" aria-label="Latest updates">
                 <ul>
-
                     <li>
                         <a href="#">Update 1</a>
                     </li>
@@ -130,15 +126,21 @@
                     <li>
                         <a href="#">Update 3</a>
                     </li>
-
                 </ul>
-
             </nav>
 
         </div>
 
-    </div>
+    </section>
 
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+    <p>&copy; 2026 My Learning Platform. All rights reserved.</p>
+</footer>
+```
 
 </body>
 
