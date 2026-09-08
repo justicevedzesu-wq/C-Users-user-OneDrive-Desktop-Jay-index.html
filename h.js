@@ -1,55 +1,69 @@
-function login() {
+// =========================
+// LOGIN SYSTEM
+// =========================
 
-    const username =
-        document.getElementById("username").value.trim();
+const loginForm = document.getElementById("loginForm");
 
-    const password =
-        document.getElementById("password").value;
+if (loginForm) {
 
+    loginForm.addEventListener("submit", function (event) {
 
-    // Get saved accounts
+        // Stop the form from refreshing the page
+        event.preventDefault();
 
-    const users =
-        JSON.parse(localStorage.getItem("users")) || [];
+        // Get username and password
+        const username = document
+            .getElementById("username")
+            .value
+            .trim();
 
+        const password = document
+            .getElementById("password")
+            .value;
 
-    // Look for matching account
+        // Get registered users from localStorage
+        const users =
+            JSON.parse(localStorage.getItem("users")) || [];
 
-    const user =
-        users.find(account =>
+        // Find a matching account
+        const user = users.find(function (account) {
 
-            account.username === username &&
-            account.password === password
+            return (
+                account.username === username &&
+                account.password === password
+            );
 
-        );
+        });
 
+        // =========================
+        // SUCCESSFUL LOGIN
+        // =========================
 
-    if (user) {
+        if (user) {
 
-        // Remember the logged-in student
+            // Save currently logged-in user
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(user)
+            );
 
-        localStorage.setItem(
-            "currentUser",
-            JSON.stringify(user)
-        );
+            alert("Login successful! 🎉");
 
+            // Go to dashboard
+            window.location.href = "dashboard.html";
 
-        alert("Login successful! 🎉");
+        }
 
+        // =========================
+        // FAILED LOGIN
+        // =========================
 
-        // Go to dashboard
+        else {
 
-        window.location.href =
-            "dashboard.html";
+            alert("Incorrect username or password ❌");
 
-    }
+        }
 
-    else {
-
-        alert(
-            "Incorrect username or password ❌"
-        );
-
-    }
+    });
 
 }
