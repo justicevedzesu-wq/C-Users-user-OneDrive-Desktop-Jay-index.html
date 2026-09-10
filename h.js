@@ -1,74 +1,55 @@
-```javascript
-// =========================
-// LOGIN SYSTEM
-// =========================
+function login() {
 
-const loginForm = document.getElementById("loginForm");
+    const username =
+        document.getElementById("username").value.trim();
 
-if (loginForm) {
-
-    loginForm.addEventListener("submit", function (event) {
-
-        // Prevent page refresh
-        event.preventDefault();
-
-        // Get username
-        const username = document
-            .getElementById("username")
-            .value
-            .trim();
-
-        // Get password
-        const password = document
-            .getElementById("password")
-            .value;
-
-        // Get registered users
-        const users =
-            JSON.parse(localStorage.getItem("users")) || [];
-
-        // Find matching user
-        const user = users.find(function (account) {
-
-            return (
-                account.username === username &&
-                account.password === password
-            );
-
-        });
+    const password =
+        document.getElementById("password").value;
 
 
-        // =========================
-        // SUCCESSFUL LOGIN
-        // =========================
+    // Get saved accounts
 
-        if (user) {
-
-            // Save logged-in user
-            localStorage.setItem(
-                "currentUser",
-                JSON.stringify(user)
-            );
-
-            alert("Login successful! 🎉");
-
-            // Open dashboard
-            window.location.href = "dashboard.html";
-
-        }
+    const users =
+        JSON.parse(localStorage.getItem("users")) || [];
 
 
-        // =========================
-        // FAILED LOGIN
-        // =========================
+    // Look for matching account
 
-        else {
+    const user =
+        users.find(account =>
 
-            alert("Incorrect username or password ❌");
+            account.username === username &&
+            account.password === password
 
-        }
+        );
 
-    });
+
+    if (user) {
+
+        // Remember the logged-in student
+
+        localStorage.setItem(
+            "currentUser",
+            JSON.stringify(user)
+        );
+
+
+        alert("Login successful! 🎉");
+
+
+        // Go to dashboard
+
+        window.location.href =
+            "dashboard.html";
+
+    }
+
+    else {
+
+        alert(
+            "Incorrect username or password ❌"
+        );
+
+    }
 
 }
-
