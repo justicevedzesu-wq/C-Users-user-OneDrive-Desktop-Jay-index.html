@@ -18,6 +18,6 @@ function enter1() {
 }
 function enter2() {
     alert("OPENED SUCCESSFULL");
-     window.location.href = "c++.html";
+     window.location.href = "programming.html";
 
 }
