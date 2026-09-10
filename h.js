@@ -1,61 +1,55 @@
-```javascript
-const loginForm = document.getElementById("loginForm");
+function login() {
 
-if (loginForm) {
+    const username =
+        document.getElementById("username").value.trim();
 
-    loginForm.addEventListener("submit", function (event) {
-
-        event.preventDefault();
-
-        const username =
-            document.getElementById("username").value.trim();
-
-        const password =
-            document.getElementById("password").value;
+    const password =
+        document.getElementById("password").value;
 
 
-        // Get saved accounts
-        const users =
-            JSON.parse(localStorage.getItem("users")) || [];
+    // Get saved accounts
+
+    const users =
+        JSON.parse(localStorage.getItem("users")) || [];
 
 
-        // Find matching account
-        const user = users.find(function (account) {
+    // Look for matching account
 
-            return (
-                account.username === username &&
-                account.password === password
-            );
+    const user =
+        users.find(account =>
 
-        });
+            account.username === username &&
+            account.password === password
 
-
-        if (user) {
-
-            // Remember the logged-in student
-            localStorage.setItem(
-                "currentUser",
-                JSON.stringify(user)
-            );
+        );
 
 
-            alert("Login successful! 🎉");
+    if (user) {
+
+        // Remember the logged-in student
+
+        localStorage.setItem(
+            "currentUser",
+            JSON.stringify(user)
+        );
 
 
-            // Open dashboard
-            window.location.href = "dashboard.html";
+        alert("Login successful! 🎉");
 
-        }
 
-        else {
+        // Go to dashboard
 
-            alert(
-                "Incorrect username or password ❌"
-            );
+        window.location.href =
+            "dashboard.html";
 
-        }
+    }
 
-    });
+    else {
+
+        alert(
+            "Incorrect username or password ❌"
+        );
+
+    }
 
 }
-```
