@@ -1,21 +1,14 @@
-```javascript
+
 // ============================================
 // ASSIGNMENT SYSTEM
 // ============================================
 
-// Get the questions container
 const questionsContainer = document.getElementById("questions");
-
-// Get the assignment form
 const assignmentForm = document.getElementById("assignmentForm");
-
-// Get the result container
 const resultContainer = document.getElementById("result");
 
 
-// ============================================
-// DETERMINE WHICH ASSIGNMENT WAS SELECTED
-// ============================================
+// Get assignment type from the URL
 
 const urlParams = new URLSearchParams(window.location.search);
 
@@ -25,24 +18,19 @@ const assignmentType =
     "cs-introduction";
 
 
-// ============================================
-// GET THE CORRECT QUESTION BANK
-// ============================================
+// Select the correct question bank
 
 let selectedQuestions = questionBanks[assignmentType];
 
 
-// If the requested assignment does not exist,
-// use Computer Science Introduction as default.
+// If assignment doesn't exist, use Computer Science Introduction
 
 if (!selectedQuestions) {
     selectedQuestions = questionBanks["cs-introduction"];
 }
 
 
-// ============================================
-// ASSIGNMENT TITLES
-// ============================================
+// Assignment titles
 
 const assignmentTitles = {
 
@@ -58,9 +46,7 @@ const assignmentTitles = {
 };
 
 
-// ============================================
-// CHANGE PAGE TITLE
-// ============================================
+// Change the title on the page
 
 const titleElement =
     document.getElementById("assignmentTitle");
@@ -93,7 +79,9 @@ if (descriptionElement) {
 function displayQuestions() {
 
     if (!questionsContainer) {
+
         console.error("Questions container not found.");
+
         return;
     }
 
@@ -104,14 +92,15 @@ function displayQuestions() {
     selectedQuestions.forEach(function (item, index) {
 
         // Create question container
+
         const questionDiv =
             document.createElement("div");
 
-        questionDiv.className =
-            "question";
+        questionDiv.className = "question";
 
 
-        // Question number and question
+        // Create question heading
+
         const questionTitle =
             document.createElement("h3");
 
@@ -123,13 +112,13 @@ function displayQuestions() {
 
 
         // Create answer options
-        item.options.forEach(function (option, optionIndex) {
+
+        item.options.forEach(function (option) {
 
             const label =
                 document.createElement("label");
 
-            label.className =
-                "option";
+            label.className = "option";
 
 
             const radio =
@@ -149,9 +138,7 @@ function displayQuestions() {
             label.appendChild(radio);
 
             label.appendChild(
-                document.createTextNode(
-                    " " + option
-                )
+                document.createTextNode(" " + option)
             );
 
 
@@ -160,18 +147,14 @@ function displayQuestions() {
         });
 
 
-        questionsContainer.appendChild(
-            questionDiv
-        );
+        questionsContainer.appendChild(questionDiv);
 
     });
 
 }
 
 
-// ============================================
-// DISPLAY QUESTIONS WHEN PAGE LOADS
-// ============================================
+// Display questions when page loads
 
 displayQuestions();
 
@@ -186,14 +169,14 @@ if (assignmentForm) {
         "submit",
         function (event) {
 
-            // Stop page from refreshing
             event.preventDefault();
 
 
             let score = 0;
 
 
-            // Check every question
+            // Check every answer
+
             selectedQuestions.forEach(
                 function (item, index) {
 
@@ -216,20 +199,28 @@ if (assignmentForm) {
             );
 
 
-            // Calculate percentage
+            // Calculate result
+
             const total =
                 selectedQuestions.length;
 
             const percentage =
-                Math.round((score / total) * 100);
+                Math.round(
+                    (score / total) * 100
+                );
 
 
             // Display result
+
             if (resultContainer) {
 
                 resultContainer.innerHTML = `
+
                     <div class="result-box">
-                        <h2>Assignment Completed 🎉</h2>
+
+                        <h2>
+                            Assignment Completed 🎉
+                        </h2>
 
                         <p>
                             You scored
@@ -249,13 +240,16 @@ if (assignmentForm) {
                         >
                             Try Again
                         </button>
+
                     </div>
+
                 `;
 
             }
 
 
             // Scroll to result
+
             if (resultContainer) {
 
                 resultContainer.scrollIntoView({
@@ -266,6 +260,7 @@ if (assignmentForm) {
 
 
             // Disable submit button
+
             const submitButton =
                 assignmentForm.querySelector(
                     ".submit-btn"
@@ -285,4 +280,4 @@ if (assignmentForm) {
     );
 
 }
-```
+
