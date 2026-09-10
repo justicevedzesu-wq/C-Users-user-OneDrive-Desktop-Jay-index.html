@@ -1,55 +1,61 @@
-function login() {
+```javascript
+const loginForm = document.getElementById("loginForm");
 
-    const username =
-        document.getElementById("username").value.trim();
+if (loginForm) {
 
-    const password =
-        document.getElementById("password").value;
+    loginForm.addEventListener("submit", function (event) {
 
+        event.preventDefault();
 
-    // Get saved accounts
+        const username =
+            document.getElementById("username").value.trim();
 
-    const users =
-        JSON.parse(localStorage.getItem("users")) || [];
-
-
-    // Look for matching account
-
-    const user =
-        users.find(account =>
-
-            account.username === username &&
-            account.password === password
-
-        );
+        const password =
+            document.getElementById("password").value;
 
 
-    if (user) {
-
-        // Remember the logged-in student
-
-        localStorage.setItem(
-            "currentUser",
-            JSON.stringify(user)
-        );
+        // Get saved accounts
+        const users =
+            JSON.parse(localStorage.getItem("users")) || [];
 
 
-        alert("Login successful! 🎉");
+        // Find matching account
+        const user = users.find(function (account) {
+
+            return (
+                account.username === username &&
+                account.password === password
+            );
+
+        });
 
 
-        // Go to dashboard
+        if (user) {
 
-        window.location.href =
-            "dashboard.html";
+            // Remember the logged-in student
+            localStorage.setItem(
+                "currentUser",
+                JSON.stringify(user)
+            );
 
-    }
 
-    else {
+            alert("Login successful! 🎉");
 
-        alert(
-            "Incorrect username or password ❌"
-        );
 
-    }
+            // Open dashboard
+            window.location.href = "dashboard.html";
+
+        }
+
+        else {
+
+            alert(
+                "Incorrect username or password ❌"
+            );
+
+        }
+
+    });
 
 }
+```
