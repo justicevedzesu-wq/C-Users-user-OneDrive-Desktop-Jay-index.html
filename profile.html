@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,17 +35,12 @@
     <nav>
 
         <a href="dashboard.html">
-
             <i class="fa-solid fa-house"></i>
-
             Dashboard
-
         </a>
 
         <a href="math.html">
-
             Mathematics
-
         </a>
 
     </nav>
@@ -57,9 +53,17 @@
 
 <section class="profile-header">
 
-    <div class="profile-picture">
+    <div class="profile-picture" id="profilePictureContainer">
 
-        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-user"
+           id="defaultProfileIcon"></i>
+
+        <img
+            id="profileHeaderPhoto"
+            src=""
+            alt="Profile Picture"
+            style="display: none;"
+        >
 
     </div>
 
@@ -81,6 +85,271 @@
 <main class="profile-container">
 
 
+
+    <!-- PROFILE PHOTO -->
+
+    <section class="profile-card profile-photo-card">
+
+        <div class="card-title">
+
+            <div>
+
+                <h2>
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Profile Picture
+
+                </h2>
+
+                <p>
+                    Upload your own picture or choose an avatar.
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PHOTO PREVIEW -->
+
+        <div class="profile-photo">
+
+            <div class="photo-placeholder"
+                 id="photoPlaceholder">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <img
+                id="profilePhoto"
+                src=""
+                alt="Student Profile Photo"
+                style="display: none;"
+            >
+
+        </div>
+
+
+
+        <!-- UPLOAD -->
+
+        <input
+            type="file"
+            id="photoInput"
+            accept="image/png,image/jpeg,image/webp"
+            hidden
+        >
+
+
+        <div class="photo-actions">
+
+            <button
+                type="button"
+                class="photo-btn"
+                onclick="document.getElementById('photoInput').click()">
+
+                <i class="fa-solid fa-camera"></i>
+
+                Upload Photo
+
+            </button>
+
+
+            <button
+                type="button"
+                class="remove-photo-btn"
+                id="removePhotoButton"
+                onclick="removeProfilePhoto()">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Remove Photo
+
+            </button>
+
+        </div>
+
+
+        <p class="photo-info">
+
+            JPG, PNG or WEBP. Choose a clear profile photo.
+
+        </p>
+
+
+
+        <!-- AVATAR SECTION -->
+
+        <div class="avatar-section">
+
+            <h3>
+
+                <i class="fa-solid fa-face-smile"></i>
+
+                Or Choose an Avatar
+
+            </h3>
+
+
+            <p>
+                Don't want to upload a picture?
+                Choose an avatar below.
+            </p>
+
+
+
+            <!-- MALE AVATARS -->
+
+            <div class="avatar-category">
+
+                <h4>
+
+                    <i class="fa-solid fa-mars"></i>
+
+                    Male Avatars
+
+                </h4>
+
+
+                <div class="avatar-grid">
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('male1')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Felix"
+                            alt="Male Avatar 1"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('male2')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Jack"
+                            alt="Male Avatar 2"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('male3')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=James"
+                            alt="Male Avatar 3"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('male4')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Michael"
+                            alt="Male Avatar 4"
+                        >
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FEMALE AVATARS -->
+
+            <div class="avatar-category">
+
+                <h4>
+
+                    <i class="fa-solid fa-venus"></i>
+
+                    Female Avatars
+
+                </h4>
+
+
+                <div class="avatar-grid">
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('female1')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Amelia"
+                            alt="Female Avatar 1"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('female2')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Sophia"
+                            alt="Female Avatar 2"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('female3')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Emma"
+                            alt="Female Avatar 3"
+                        >
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="avatar-option"
+                        onclick="selectAvatar('female4')">
+
+                        <img
+                            src="https://api.dicebear.com/9.x/adventurer/svg?seed=Olivia"
+                            alt="Female Avatar 4"
+                        >
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
     <!-- PERSONAL INFORMATION -->
 
     <section class="profile-card">
@@ -90,8 +359,11 @@
             <div>
 
                 <h2>
+
                     <i class="fa-solid fa-user"></i>
+
                     Personal Information
+
                 </h2>
 
                 <p>
@@ -262,8 +534,7 @@
                     id="bio"
                     rows="4"
                     disabled
-                    placeholder="Tell us a little about yourself">
-                </textarea>
+                    placeholder="Tell us a little about yourself"></textarea>
 
             </div>
 
@@ -355,35 +626,6 @@
         Logout
 
     </button>
-    <div class="profile-photo-section">
-
-    <div class="profile-photo">
-        <img id="profilePhoto"
-             src="https://via.placeholder.com/150"
-             alt="Student Profile Photo">
-    </div>
-
-    <input
-        type="file"
-        id="photoInput"
-        accept="image/*"
-        hidden
-    >
-
-    <button type="button"
-            class="photo-btn"
-            onclick="document.getElementById('photoInput').click()">
-
-        <i class="fa-solid fa-camera"></i>
-        Change Profile Photo
-
-    </button>
-
-    <p class="photo-info">
-        JPG, PNG or WEBP. Choose a clear profile photo.
-    </p>
-
-</div>
 
 
 </main>
@@ -405,3 +647,5 @@
 </body>
 
 </html>
+
+
