@@ -1,3 +1,4 @@
+
 // ==========================================
 // GET CURRENTLY LOGGED-IN STUDENT
 // ==========================================
@@ -47,16 +48,24 @@ function loadProfile() {
         currentUser.bio || "";
 
 
-    // Header
+    // ======================================
+    // PROFILE HEADER
+    // ======================================
 
     document.getElementById("profileName").textContent =
         currentUser.fullName ||
-        currentUser.username;
+        currentUser.username ||
+        "Student";
 
     document.getElementById("profileUsername").textContent =
-        "@" + currentUser.username;
+        "@" + (currentUser.username || "username");
+
+
+    // Load profile picture/avatar
+    loadProfilePhoto();
 
 }
+
 
 
 // ==========================================
@@ -66,7 +75,9 @@ function loadProfile() {
 function enableEditing() {
 
     document
-        .querySelectorAll("#profileForm input, #profileForm select, #profileForm textarea")
+        .querySelectorAll(
+            "#profileForm input, #profileForm select, #profileForm textarea"
+        )
         .forEach(function(element) {
 
             element.disabled = false;
@@ -84,6 +95,7 @@ function enableEditing() {
 }
 
 
+
 // ==========================================
 // CANCEL EDITING
 // ==========================================
@@ -94,7 +106,9 @@ function cancelEditing() {
 
 
     document
-        .querySelectorAll("#profileForm input, #profileForm select, #profileForm textarea")
+        .querySelectorAll(
+            "#profileForm input, #profileForm select, #profileForm textarea"
+        )
         .forEach(function(element) {
 
             element.disabled = true;
@@ -112,6 +126,7 @@ function cancelEditing() {
 }
 
 
+
 // ==========================================
 // SAVE PROFILE
 // ==========================================
@@ -125,26 +140,37 @@ document
 
         // Get updated information
 
+        const oldUsername =
+            currentUser.username;
+
+
         currentUser.fullName =
-            document.getElementById("fullName").value.trim();
+            document.getElementById("fullName")
+                .value.trim();
 
         currentUser.username =
-            document.getElementById("username").value.trim();
+            document.getElementById("username")
+                .value.trim();
 
         currentUser.email =
-            document.getElementById("email").value.trim();
+            document.getElementById("email")
+                .value.trim();
 
         currentUser.phone =
-            document.getElementById("phone").value.trim();
+            document.getElementById("phone")
+                .value.trim();
 
         currentUser.department =
-            document.getElementById("department").value.trim();
+            document.getElementById("department")
+                .value.trim();
 
         currentUser.level =
-            document.getElementById("level").value;
+            document.getElementById("level")
+                .value;
 
         currentUser.bio =
-            document.getElementById("bio").value.trim();
+            document.getElementById("bio")
+                .value.trim();
 
 
         // ======================================
@@ -158,7 +184,7 @@ document
         const userIndex =
             users.findIndex(function(user) {
 
-                return user.username === currentUser.username;
+                return user.username === oldUsername;
 
             });
 
@@ -192,10 +218,11 @@ document
 
         document.getElementById("profileName").textContent =
             currentUser.fullName ||
-            currentUser.username;
+            currentUser.username ||
+            "Student";
 
         document.getElementById("profileUsername").textContent =
-            "@" + currentUser.username;
+            "@" + (currentUser.username || "username");
 
 
         alert("Profile updated successfully! ✅");
@@ -204,7 +231,9 @@ document
         // Disable editing again
 
         document
-            .querySelectorAll("#profileForm input, #profileForm select, #profileForm textarea")
+            .querySelectorAll(
+                "#profileForm input, #profileForm select, #profileForm textarea"
+            )
             .forEach(function(element) {
 
                 element.disabled = true;
@@ -222,6 +251,7 @@ document
     });
 
 
+
 // ==========================================
 // LOGOUT
 // ==========================================
@@ -237,80 +267,428 @@ function logout() {
 }
 
 
+
+// ==========================================
+// PROFILE PHOTO / AVATAR SYSTEM
+// ==========================================
+
+const photoInput =
+    document.getElementById("photoInput");
+
+const profilePhoto =
+    document.getElementById("profilePhoto");
+
+const photoPlaceholder =
+    document.getElementById("photoPlaceholder");
+
+const profileHeaderPhoto =
+    document.getElementById("profileHeaderPhoto");
+
+const defaultProfileIcon =
+    document.getElementById("defaultProfileIcon");
+
+
+// ==========================================
+// AVATAR LIST
+// ==========================================
+
+const avatars = {
+
+    male1:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Felix",
+
+    male2:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Jack",
+
+    male3:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=James",
+
+    male4:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Michael",
+
+
+    female1:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Amelia",
+
+    female2:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Sophia",
+
+    female3:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Emma",
+
+    female4:
+        "https://api.dicebear.com/9.x/adventurer/svg?seed=Olivia"
+
+};
+
+
+
+// ==========================================
+// CREATE USER-SPECIFIC STORAGE KEY
+// ==========================================
+
+function getProfileImageKey() {
+
+    const username =
+        currentUser.username || "student";
+
+    return "profileImage_" + username;
+
+}
+
+
+
+// ==========================================
+// DISPLAY PROFILE IMAGE
+// ==========================================
+
+function displayProfileImage(image) {
+
+    if (!image) {
+
+        removeDisplayedProfileImage();
+
+        return;
+
+    }
+
+
+    // ======================================
+    // PROFILE CARD IMAGE
+    // ======================================
+
+    if (profilePhoto) {
+
+        profilePhoto.src = image;
+
+        profilePhoto.style.display = "block";
+
+    }
+
+
+    if (photoPlaceholder) {
+
+        photoPlaceholder.style.display = "none";
+
+    }
+
+
+    // ======================================
+    // PROFILE HEADER IMAGE
+    // ======================================
+
+    if (profileHeaderPhoto) {
+
+        profileHeaderPhoto.src = image;
+
+        profileHeaderPhoto.style.display = "block";
+
+    }
+
+
+    if (defaultProfileIcon) {
+
+        defaultProfileIcon.style.display = "none";
+
+    }
+
+
+    // ======================================
+    // REMOVE OLD SELECTED STATE
+    // ======================================
+
+    document
+        .querySelectorAll(".avatar-option")
+        .forEach(function(button) {
+
+            button.classList.remove("selected");
+
+        });
+
+
+    // Highlight selected avatar
+
+    document
+        .querySelectorAll(".avatar-option")
+        .forEach(function(button) {
+
+            const imageElement =
+                button.querySelector("img");
+
+            if (
+                imageElement &&
+                imageElement.src === image
+            ) {
+
+                button.classList.add("selected");
+
+            }
+
+        });
+
+}
+
+
+
+// ==========================================
+// RETURN TO DEFAULT PROFILE ICON
+// ==========================================
+
+function removeDisplayedProfileImage() {
+
+    if (profilePhoto) {
+
+        profilePhoto.src = "";
+
+        profilePhoto.style.display = "none";
+
+    }
+
+
+    if (photoPlaceholder) {
+
+        photoPlaceholder.style.display = "flex";
+
+    }
+
+
+    if (profileHeaderPhoto) {
+
+        profileHeaderPhoto.src = "";
+
+        profileHeaderPhoto.style.display = "none";
+
+    }
+
+
+    if (defaultProfileIcon) {
+
+        defaultProfileIcon.style.display = "block";
+
+    }
+
+
+    document
+        .querySelectorAll(".avatar-option")
+        .forEach(function(button) {
+
+            button.classList.remove("selected");
+
+        });
+
+}
+
+
+
+// ==========================================
+// LOAD SAVED PROFILE PHOTO / AVATAR
+// ==========================================
+
+function loadProfilePhoto() {
+
+    const savedImage =
+        localStorage.getItem(
+            getProfileImageKey()
+        );
+
+
+    if (savedImage) {
+
+        displayProfileImage(savedImage);
+
+    } else {
+
+        removeDisplayedProfileImage();
+
+    }
+
+}
+
+
+
+// ==========================================
+// UPLOAD NEW PROFILE PHOTO
+// ==========================================
+
+if (photoInput) {
+
+    photoInput.addEventListener(
+        "change",
+        function() {
+
+            const file =
+                this.files[0];
+
+
+            if (!file) {
+
+                return;
+
+            }
+
+
+            // Check image type
+
+            if (!file.type.startsWith("image/")) {
+
+                alert(
+                    "Please select an image file."
+                );
+
+                this.value = "";
+
+                return;
+
+            }
+
+
+            // Limit file size to 2 MB
+
+            if (
+                file.size >
+                2 * 1024 * 1024
+            ) {
+
+                alert(
+                    "Please choose an image smaller than 2 MB."
+                );
+
+                this.value = "";
+
+                return;
+
+            }
+
+
+            const reader =
+                new FileReader();
+
+
+            reader.onload =
+                function(event) {
+
+                    const imageData =
+                        event.target.result;
+
+
+                    // Save image for this user
+
+                    localStorage.setItem(
+                        getProfileImageKey(),
+                        imageData
+                    );
+
+
+                    // Display image
+
+                    displayProfileImage(
+                        imageData
+                    );
+
+
+                    alert(
+                        "Profile photo updated successfully! 📸"
+                    );
+
+                };
+
+
+            reader.readAsDataURL(file);
+
+
+            // Allow selecting the same file again
+
+            this.value = "";
+
+        }
+    );
+
+}
+
+
+
+// ==========================================
+// SELECT AVATAR
+// ==========================================
+
+function selectAvatar(avatarName) {
+
+    const avatar =
+        avatars[avatarName];
+
+
+    if (!avatar) {
+
+        return;
+
+    }
+
+
+    // Save selected avatar
+
+    localStorage.setItem(
+        getProfileImageKey(),
+        avatar
+    );
+
+
+    // Display avatar
+
+    displayProfileImage(
+        avatar
+    );
+
+
+    alert(
+        "Avatar selected successfully! 👤"
+    );
+
+}
+
+
+
+// ==========================================
+// REMOVE PROFILE PHOTO / AVATAR
+// ==========================================
+
+function removeProfilePhoto() {
+
+    const storageKey =
+        getProfileImageKey();
+
+
+    // Remove saved image
+
+    localStorage.removeItem(
+        storageKey
+    );
+
+
+    // Return to default icon
+
+    removeDisplayedProfileImage();
+
+
+    // Clear file input
+
+    if (photoInput) {
+
+        photoInput.value = "";
+
+    }
+
+
+    alert(
+        "Profile photo removed successfully! 🗑️"
+    );
+
+}
+
+
+
 // ==========================================
 // LOAD PROFILE WHEN PAGE OPENS
 // ==========================================
 
 loadProfile();
-// ================================
-// PROFILE PHOTO
-// ================================
 
-const photoInput = document.getElementById("photoInput");
-const profilePhoto = document.getElementById("profilePhoto");
-
-
-// Load saved profile photo
-function loadProfilePhoto() {
-
-    const savedPhoto = localStorage.getItem("profilePhoto");
-
-    if (savedPhoto) {
-        profilePhoto.src = savedPhoto;
-    }
-}
-
-
-// Select new photo
-photoInput.addEventListener("change", function () {
-
-    const file = this.files[0];
-
-    if (!file) {
-        return;
-    }
-
-
-    // Make sure the selected file is an image
-    if (!file.type.startsWith("image/")) {
-
-        alert("Please select an image file.");
-
-        return;
-    }
-
-
-    // Limit file size to 2 MB
-    if (file.size > 2 * 1024 * 1024) {
-
-        alert("Please choose an image smaller than 2 MB.");
-
-        return;
-    }
-
-
-    const reader = new FileReader();
-
-
-    reader.onload = function (event) {
-
-        const imageData = event.target.result;
-
-        // Display photo
-        profilePhoto.src = imageData;
-
-        // Save photo
-        localStorage.setItem("profilePhoto", imageData);
-
-        alert("Profile photo updated successfully! 📸");
-
-    };
-
-
-    reader.readAsDataURL(file);
-
-});
-
-
-// Load photo when profile opens
-loadProfilePhoto();
