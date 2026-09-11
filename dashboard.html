@@ -21,12 +21,14 @@
 
     <!-- Navigation -->
     <header>
+
         <div class="logo">
             <i class="fa-solid fa-graduation-cap"></i>
             Student Portal
         </div>
 
         <nav>
+
             <a href="profile.html">
                 <i class="fa-solid fa-user"></i>
                 Profile
@@ -36,7 +38,9 @@
                 <i class="fa-solid fa-book"></i>
                 Assignments
             </a>
+
         </nav>
+
     </header>
 
 
@@ -44,18 +48,26 @@
     <section class="welcome">
 
         <div>
-            <p class="welcome-small">WELCOME BACK 👋</p>
 
-            <h1>Ready to learn something new?</h1>
+            <p class="welcome-small">
+                WELCOME BACK 👋
+            </p>
+
+            <h1>
+                Ready to learn something new?
+            </h1>
 
             <p class="welcome-text">
                 Choose a course below and continue your learning journey.
-                Stay consistent, complete your assignments and keep improving.
+                Stay consistent, complete your lessons and keep improving.
             </p>
+
         </div>
 
         <div class="welcome-icon">
+
             <i class="fa-solid fa-laptop-code"></i>
+
         </div>
 
     </section>
@@ -65,32 +77,95 @@
     <section class="stats">
 
         <div class="stat-card">
+
             <i class="fa-solid fa-book-open"></i>
 
             <div>
-                <h3>3</h3>
-                <p>Courses</p>
+
+                <h3 id="completedLessons">
+                    0
+                </h3>
+
+                <p>
+                    Lessons Completed
+                </p>
+
             </div>
+
         </div>
 
 
         <div class="stat-card">
+
             <i class="fa-solid fa-tasks"></i>
 
             <div>
-                <h3>12</h3>
-                <p>Assignments</p>
+
+                <h3>
+                    12
+                </h3>
+
+                <p>
+                    Assignments
+                </p>
+
             </div>
+
         </div>
 
 
         <div class="stat-card">
+
             <i class="fa-solid fa-chart-line"></i>
 
             <div>
-                <h3>75%</h3>
-                <p>Progress</p>
+
+                <h3 id="lessonProgress">
+                    0%
+                </h3>
+
+                <p>
+                    Lesson Progress
+                </p>
+
             </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Recommended Lesson -->
+    <section class="recommended-lesson">
+
+        <div class="recommended-icon">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+        </div>
+
+        <div class="recommended-content">
+
+            <span>
+                RECOMMENDED NEXT LESSON
+            </span>
+
+            <h2 id="recommendedTitle">
+                Introduction to Computer Science
+            </h2>
+
+            <p id="recommendedDescription">
+                Start learning the foundations of computer science.
+            </p>
+
+            <a id="recommendedButton"
+               href="cs-introduction.html">
+
+                Start Lesson
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
         </div>
 
     </section>
@@ -100,23 +175,32 @@
     <section class="courses">
 
         <div class="section-heading">
+
             <div>
-                <h2>Your Courses</h2>
+
+                <h2>
+                    Your Courses
+                </h2>
 
                 <p>
                     Select a course to access your learning materials.
                 </p>
+
             </div>
+
         </div>
 
 
         <div class="course-grid">
 
+
             <!-- Computer Science -->
             <div class="course-card">
 
                 <div class="course-icon">
+
                     <i class="fa-solid fa-computer"></i>
+
                 </div>
 
                 <div class="course-content">
@@ -125,16 +209,22 @@
                         COURSE 01
                     </span>
 
-                    <h3>Computer Science</h3>
+                    <h3>
+                        Computer Science
+                    </h3>
 
                     <p>
                         Explore computer systems, algorithms,
                         software and the fundamentals of computing.
                     </p>
 
-                    <button type="button" onclick="enter()">
+                    <button type="button"
+                            onclick="enter()">
+
                         Continue
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </button>
 
                 </div>
@@ -146,7 +236,9 @@
             <div class="course-card">
 
                 <div class="course-icon">
+
                     <i class="fa-solid fa-calculator"></i>
+
                 </div>
 
                 <div class="course-content">
@@ -155,16 +247,22 @@
                         COURSE 02
                     </span>
 
-                    <h3>Mathematics</h3>
+                    <h3>
+                        Mathematics
+                    </h3>
 
                     <p>
                         Build your mathematical skills through
                         problem solving, calculus and logical reasoning.
                     </p>
 
-                    <button type="button" onclick="enter1()">
+                    <button type="button"
+                            onclick="enter1()">
+
                         Continue
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </button>
 
                 </div>
@@ -176,7 +274,9 @@
             <div class="course-card">
 
                 <div class="course-icon">
+
                     <i class="fa-solid fa-code"></i>
+
                 </div>
 
                 <div class="course-content">
@@ -185,21 +285,28 @@
                         COURSE 03
                     </span>
 
-                    <h3>Programming with C++</h3>
+                    <h3>
+                        Programming with C++
+                    </h3>
 
                     <p>
                         Learn programming concepts, algorithms,
                         loops, functions and object-oriented programming.
                     </p>
 
-                    <button type="button" onclick="enter2()">
+                    <button type="button"
+                            onclick="enter2()">
+
                         Continue
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </button>
 
                 </div>
 
             </div>
+
 
         </div>
 
@@ -210,16 +317,22 @@
     <section class="study-tip">
 
         <div class="tip-icon">
+
             <i class="fa-solid fa-lightbulb"></i>
+
         </div>
 
         <div>
-            <h3>Today's Study Tip</h3>
+
+            <h3>
+                Today's Study Tip
+            </h3>
 
             <p>
                 Don't just read your notes. Practice what you learn.
                 Solve problems, write code and test yourself regularly.
             </p>
+
         </div>
 
     </section>
@@ -238,6 +351,8 @@
 
     </footer>
 
+
 </body>
+
 </html>
 
