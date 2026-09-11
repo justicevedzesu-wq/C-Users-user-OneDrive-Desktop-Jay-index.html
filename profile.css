@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -120,6 +121,19 @@ nav a:hover {
     box-shadow:
         0 8px 20px
         rgba(0, 0, 0, 0.15);
+
+    overflow: hidden;
+}
+
+
+.profile-picture img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
 }
 
 
@@ -204,6 +218,285 @@ nav a:hover {
     color: #6b7280;
 
     font-size: 14px;
+}
+
+
+
+/* =========================
+   PROFILE PHOTO CARD
+========================= */
+
+.profile-photo-card {
+    text-align: center;
+}
+
+
+.profile-photo-card .card-title {
+    text-align: left;
+}
+
+
+.profile-photo {
+    width: 150px;
+
+    height: 150px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 5px solid white;
+
+    background: #e5e7eb;
+
+    box-shadow:
+        0 5px 18px
+        rgba(0, 0, 0, 0.15);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.profile-photo img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+}
+
+
+.photo-placeholder {
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 55px;
+}
+
+
+
+/* =========================
+   PHOTO ACTIONS
+========================= */
+
+.photo-actions {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 10px;
+}
+
+
+.photo-btn,
+.remove-photo-btn {
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    color: white;
+}
+
+
+.photo-btn {
+    background: #2563eb;
+}
+
+
+.photo-btn:hover {
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+}
+
+
+.remove-photo-btn {
+    background: #dc2626;
+}
+
+
+.remove-photo-btn:hover {
+    background: #b91c1c;
+
+    transform: translateY(-2px);
+}
+
+
+.photo-btn i,
+.remove-photo-btn i {
+    margin-right: 7px;
+}
+
+
+.photo-info {
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color: #6b7280;
+}
+
+
+
+/* =========================
+   AVATAR SECTION
+========================= */
+
+.avatar-section {
+    margin-top: 35px;
+
+    padding-top: 30px;
+
+    border-top: 1px solid #e5e7eb;
+}
+
+
+.avatar-section h3 {
+    font-size: 20px;
+
+    color: #111827;
+
+    margin-bottom: 5px;
+}
+
+
+.avatar-section h3 i {
+    color: #2563eb;
+
+    margin-right: 7px;
+}
+
+
+.avatar-section > p {
+    color: #6b7280;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.avatar-category {
+    margin-bottom: 28px;
+}
+
+
+.avatar-category h4 {
+    text-align: left;
+
+    font-size: 16px;
+
+    margin-bottom: 12px;
+
+    color: #374151;
+}
+
+
+.avatar-category h4 i {
+    margin-right: 6px;
+
+    color: #2563eb;
+}
+
+
+.avatar-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.avatar-option {
+    border: 3px solid transparent;
+
+    background: #f8fafc;
+
+    border-radius: 14px;
+
+    padding: 8px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.avatar-option img {
+    width: 100%;
+
+    max-width: 110px;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+.avatar-option:hover {
+    border-color: #60a5fa;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 5px 15px
+        rgba(37, 99, 235, 0.15);
+}
+
+
+.avatar-option.selected {
+    border-color: #2563eb;
+
+    background: #eff6ff;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.15);
 }
 
 
@@ -611,71 +904,46 @@ footer p {
 
     }
 
-}/* ================================
-   PROFILE PHOTO
-================================ */
 
-.profile-photo-section {
-    text-align: center;
-    margin-bottom: 30px;
-}
+    /* PHOTO */
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
+    .profile-photo {
 
-    margin: 0 auto 15px;
+        width: 130px;
 
-    border-radius: 50%;
+        height: 130px;
+    }
 
-    overflow: hidden;
 
-    border: 5px solid white;
+    .photo-actions {
 
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
+        flex-direction: column;
 
-    background: #e5e7eb;
-}
+        width: 100%;
+    }
 
-.profile-photo img {
-    width: 100%;
-    height: 100%;
 
-    object-fit: cover;
-}
+    .photo-btn,
+    .remove-photo-btn {
 
-.photo-btn {
-    border: none;
+        width: 100%;
+    }
 
-    background: #2563eb;
 
-    color: white;
+    /* AVATARS */
 
-    padding: 11px 18px;
+    .avatar-grid {
 
-    border-radius: 8px;
+        grid-template-columns:
+            repeat(2, 1fr);
 
-    font-weight: bold;
+        gap: 12px;
+    }
 
-    cursor: pointer;
 
-    transition: 0.3s;
-}
+    .avatar-option img {
 
-.photo-btn i {
-    margin-right: 7px;
-}
+        max-width: 100px;
+    }
 
-.photo-btn:hover {
-    background: #1d4ed8;
-
-    transform: translateY(-2px);
-}
-
-.photo-info {
-    margin-top: 8px;
-
-    font-size: 13px;
-
-    color: #6b7280;
 }
