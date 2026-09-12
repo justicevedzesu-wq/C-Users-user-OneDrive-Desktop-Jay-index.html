@@ -172,92 +172,6 @@
     </section>
 
 
-    <!-- AI Learning Assistant -->
-    <section class="ai-assistant">
-
-        <div class="ai-header">
-
-            <div class="ai-title">
-
-                <div class="ai-icon">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-
-                <div>
-
-                    <h2>
-                        AI Learning Assistant
-                    </h2>
-
-                    <p>
-                        Ask me anything about your studies.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <span class="ai-status">
-                <span class="status-dot"></span>
-                Online
-            </span>
-
-        </div>
-
-
-        <!-- Chat Messages -->
-        <div id="chatMessages" class="chat-messages">
-
-            <div class="ai-message">
-
-                <div class="message-icon">
-                    <i class="fa-solid fa-robot"></i>
-                </div>
-
-                <div class="message-content">
-
-                    <p>
-                        Hello! 👋 I'm your AI Learning Assistant.
-                        Ask me about Mathematics, Computer Science,
-                        C++, programming or any topic you're studying.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Chat Input -->
-        <form id="chatForm" class="chat-input-area">
-
-            <input
-                type="text"
-                id="chatInput"
-                placeholder="Ask your question..."
-                autocomplete="off"
-                required
-            >
-
-            <button type="submit" id="sendButton">
-
-                <i class="fa-solid fa-paper-plane"></i>
-
-                <span>Send</span>
-
-            </button>
-
-        </form>
-
-        <p class="ai-disclaimer">
-            AI can make mistakes. Check important information with your
-            course materials or lecturer.
-        </p>
-
-    </section>
-
-
     <!-- Courses -->
     <section class="courses">
 
@@ -437,6 +351,147 @@
         </p>
 
     </footer>
+
+
+    <!-- =========================================
+         FLOATING STUDY AI
+    ========================================= -->
+
+    <div class="study-ai-container">
+
+
+        <!-- AI Chat Button -->
+        <button
+            id="aiChatButton"
+            class="ai-chat-button"
+            type="button"
+            aria-label="Open Study AI"
+        >
+
+            <i class="fa-solid fa-robot"></i>
+
+            <span>
+                Study AI
+            </span>
+
+        </button>
+
+
+        <!-- AI Chat Box -->
+        <div
+            id="aiChatBox"
+            class="ai-chat-box"
+        >
+
+
+            <!-- Chat Header -->
+            <div class="ai-chat-header">
+
+                <div class="ai-title">
+
+                    <div class="ai-avatar">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Study AI
+                        </h3>
+
+                        <span>
+                            ● Online
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Close Button -->
+                <button
+                    id="aiClose"
+                    class="ai-close"
+                    type="button"
+                    aria-label="Close Study AI"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- Chat Messages -->
+            <div
+                id="chatMessages"
+                class="ai-chat-messages"
+            >
+
+                <div class="ai-message">
+
+                    <div class="message-avatar">
+
+                        <i class="fa-solid fa-robot"></i>
+
+                    </div>
+
+                    <div class="message-content">
+
+                        <p>
+                            Hello! 👋 I'm your Study AI.
+                            Ask me about Mathematics, Computer Science,
+                            C++, programming, accounting or any topic
+                            you're studying.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Chat Input -->
+            <form
+                id="chatForm"
+                class="ai-input-area"
+            >
+
+                <input
+                    type="text"
+                    id="chatInput"
+                    placeholder="Ask your question..."
+                    autocomplete="off"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    id="sendButton"
+                    aria-label="Send message"
+                >
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+            </form>
+
+
+            <!-- AI Footer -->
+            <div class="ai-footer">
+
+                AI can make mistakes. Check important information.
+
+            </div>
+
+        </div>
+
+    </div>
 
 
 </body>
