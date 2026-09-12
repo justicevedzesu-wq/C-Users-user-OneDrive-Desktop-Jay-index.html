@@ -273,6 +273,9 @@
 
         </div>
 
+        <link rel="stylesheet" href="chat.css">
+        <script src="chat.js" defer></script>
+
 
         <!-- MATHEMATICS -->
         <div class="subject-card">
@@ -642,6 +645,93 @@
 
 </footer>
 
+<!-- STUDY AI CHAT -->
+<div class="study-ai-container">
+
+    <button class="ai-chat-button" id="aiChatButton">
+        <i class="fa-solid fa-robot"></i>
+        <span>Study AI</span>
+    </button>
+
+    <div class="ai-chat-box" id="aiChatBox">
+
+        <div class="ai-chat-header">
+
+            <div class="ai-title">
+                <div class="ai-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div>
+                    <h3>Study AI</h3>
+                    <span>Online • Ready to help</span>
+                </div>
+            </div>
+
+            <button class="ai-close" id="aiClose">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <div class="ai-chat-messages" id="aiMessages">
+
+            <div class="ai-message">
+                <div class="message-avatar">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+
+                <div class="message-content">
+                    <p>
+                        Hi! 👋 I'm Study AI.
+                    </p>
+
+                    <p>
+                        I can help you with Computer Science,
+                        C++, Mathematics, Accounting, Computer
+                        Ethics and exam preparation.
+                    </p>
+
+                    <p>
+                        What would you like to learn today?
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="ai-typing" id="aiTyping">
+            <span></span>
+            <span></span>
+            <span></span>
+            <small>Study AI is typing...</small>
+        </div>
+
+
+        <div class="ai-input-area">
+
+            <input
+                type="text"
+                id="aiInput"
+                placeholder="Ask Study AI something..."
+                autocomplete="off"
+            >
+
+            <button id="aiSend">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+        </div>
+
+        <div class="ai-footer">
+            Study AI • Your learning assistant
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 
