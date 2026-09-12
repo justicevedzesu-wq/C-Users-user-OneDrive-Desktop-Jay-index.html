@@ -1,9 +1,44 @@
+/* =========================================
+   STUDY AI CHAT
+========================================= */
+
+const aiChatButton = document.getElementById("aiChatButton");
+const aiChatBox = document.getElementById("aiChatBox");
+const aiClose = document.getElementById("aiClose");
 
 const chatForm = document.getElementById("chatForm");
 const chatInput = document.getElementById("chatInput");
 const chatMessages = document.getElementById("chatMessages");
 const sendButton = document.getElementById("sendButton");
 
+
+/* =========================================
+   OPEN CHAT
+========================================= */
+
+aiChatButton.addEventListener("click", function () {
+
+    aiChatBox.classList.add("active");
+
+    chatInput.focus();
+
+});
+
+
+/* =========================================
+   CLOSE CHAT
+========================================= */
+
+aiClose.addEventListener("click", function () {
+
+    aiChatBox.classList.remove("active");
+
+});
+
+
+/* =========================================
+   SEND MESSAGE
+========================================= */
 
 chatForm.addEventListener("submit", async function (event) {
 
@@ -16,22 +51,22 @@ chatForm.addEventListener("submit", async function (event) {
     }
 
 
-    // Show the student's message
+    // Show user's message
     addMessage(message, "user");
 
 
-    // Clear the input
+    // Clear input
     chatInput.value = "";
 
 
-    // Disable button while AI is thinking
+    // Disable send button
     sendButton.disabled = true;
 
     sendButton.innerHTML =
-        '<i class="fa-solid fa-spinner fa-spin"></i> Thinking...';
+        '<i class="fa-solid fa-spinner fa-spin"></i>';
 
 
-    // Show temporary AI message
+    // Show thinking message
     const thinkingMessage = addMessage(
         "Thinking...",
         "ai"
@@ -67,10 +102,10 @@ chatForm.addEventListener("submit", async function (event) {
         }
 
 
-        // Replace "Thinking..." with the real answer
-        thinkingMessage.querySelector(
-            ".message-content p"
-        ).textContent = data.reply;
+        // Display AI response
+        thinkingMessage
+            .querySelector(".message-content p")
+            .textContent = data.reply;
 
 
     } catch (error) {
@@ -78,10 +113,10 @@ chatForm.addEventListener("submit", async function (event) {
         console.error("AI error:", error);
 
 
-        thinkingMessage.querySelector(
-            ".message-content p"
-        ).textContent =
-            "Sorry, I couldn't connect to the AI right now. Please try again.";
+        thinkingMessage
+            .querySelector(".message-content p")
+            .textContent =
+                "Sorry, I couldn't connect to the AI right now. Please try again.";
 
     }
 
@@ -90,16 +125,19 @@ chatForm.addEventListener("submit", async function (event) {
     sendButton.disabled = false;
 
     sendButton.innerHTML =
-        '<i class="fa-solid fa-paper-plane"></i> <span>Send</span>';
+        '<i class="fa-solid fa-paper-plane"></i>';
 
 
-    // Scroll to latest message
+    // Scroll to newest message
     chatMessages.scrollTop =
         chatMessages.scrollHeight;
 
 });
 
 
+/* =========================================
+   ADD MESSAGE
+========================================= */
 
 function addMessage(text, sender) {
 
@@ -113,38 +151,37 @@ function addMessage(text, sender) {
             : "ai-message";
 
 
-    const icon =
-        sender === "user"
-            ? "fa-user"
-            : "fa-robot";
+    if (sender === "user") {
+
+        messageDiv.innerHTML = `
+            <div class="message-content">
+                <p></p>
+            </div>
+        `;
+
+    } else {
+
+        messageDiv.innerHTML = `
+            <div class="message-avatar">
+                <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <div class="message-content">
+                <p></p>
+            </div>
+        `;
+
+    }
 
 
-    messageDiv.innerHTML = `
-
-        <div class="message-icon">
-
-            <i class="fa-solid ${icon}"></i>
-
-        </div>
-
-        <div class="message-content">
-
-            <p></p>
-
-        </div>
-
-    `;
-
-
-    messageDiv.querySelector(
-        ".message-content p"
-    ).textContent = text;
+    messageDiv
+        .querySelector(".message-content p")
+        .textContent = text;
 
 
     chatMessages.appendChild(messageDiv);
 
 
-    // Scroll down
     chatMessages.scrollTop =
         chatMessages.scrollHeight;
 
@@ -152,4 +189,3 @@ function addMessage(text, sender) {
     return messageDiv;
 
 }
-
